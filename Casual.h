@@ -1,21 +1,19 @@
-#include <iostream>
+using namespace std;
 
-class Employee {
+#pragma once
 
-protected:
-    int energyLevel;
-    int payRate;
-
+class Casual : public Employee
+{
 public:
-    Employee();
-    Employee(int payRate);
+    Casual();
+    Casual(int payRate);
+    void endWorkDay();
+    int get_dayCount();
+    void set_dayCount(int d);
+    float get_hoursWorked();
+    ~Casual();
 
-    int get_energyLevel();
-    void set_energyLevel(int energyLevel);
-
-    int get_payRate();
-    void set_payRate(int payRate);
-
-    virtual void work();
-    virtual int pay();
-}; 
+private:
+    float hoursWorked[7];
+    int dayCount;
+};
